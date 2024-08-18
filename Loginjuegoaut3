@@ -1,0 +1,28 @@
+# Definir usuario y contraseña correctos
+user_ = "Crhis06"
+pwd_ = "12345@"
+
+# Número máximo de intentos
+max_intentos = 3
+
+# Bucle para manejar múltiples intentos de inicio de sesión
+for intento in range(max_intentos):
+    print("Bienvenido, ingresa tu usuario")
+    print("Usuario: ")
+    user = input()
+
+    print("Contraseña: ")
+    pwd = input()
+
+    if user == user_ and pwd == pwd_:
+        print("Bienvenido de vuelta", user_)
+        break  # Salir del bucle si el inicio de sesión es exitoso
+    else:
+        print("Usuario o contraseña incorrectos")
+        if intento < max_intentos - 1:
+            print("Tienes", max_intentos - (intento + 1), "intentos restantes")
+        else:
+            print("Has agotado el número máximo de intentos. Por favor, intenta más tarde.")
+
+# Este bloque se ejecuta después de salir del bucle
+print("Fin del proceso de inicio de sesión.")
